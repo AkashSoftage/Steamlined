@@ -1,0 +1,24 @@
+name: Accessibility Testing
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  accessibility-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      
+        with:
+          node-version: '14'
+
+      
+
+      - name: Run axe Accessibility Tests
+        run: npx axe --exit
+
